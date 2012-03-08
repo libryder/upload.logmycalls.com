@@ -1,0 +1,80 @@
+
+<h2><span>Call</span> Uploader</h2>
+<p>The Call Uploader form resides outside of the LogMyCalls application but inside the ContactPoint intranet. It uses the API to insert call details and upload a call.</p>
+
+<div id="container">  
+<form id="query-test" name="query-test" action="/home/upload" method="POST" enctype="multipart/form-data">
+              
+    <div class="methods" id="insertCall" style="display: block; ">
+      <div class="criteria">
+        
+        
+        
+        <div class="required">
+          <label for="api_key">API Key</label>
+          <input type="text" class="validate[required]" id="api_key" value="<%=@api_key%>" name="auth[api_key]">
+        </div>
+        
+        <div class="required">
+          <label for="api_secret">API Secret</label>
+          <input type="text" class="validate[required]" id="api_secret" value="<%=@api_secret%>" name="auth[api_secret]">
+        </div>
+        
+        <div class="required">
+          <label for="ouid">Group</label>
+          <input type="text" class="validate[required]" id="ouid" name="criteria[ouid]">
+        </div>
+        
+        <div class="required">
+          <label for="calldate">Call Date</label>
+          <input type="text" class="validate[required]" id="calldate" name="criteria[calldate]">
+        </div>
+        
+        <div class="required">
+          <label for="caller_id">Originating Number</label>
+          <input type="text" class="validate[required]" id="caller_id" name="criteria[caller_id]">
+        </div>
+        
+        <div class="required">
+          <label for="tracking_number">Tracking Number</label>
+          <input type="text" class="validate[required]" id="tracking_number" name="criteria[tracking_number]">
+        </div>
+        
+        <div class="required">
+          <label for="ringto_number">Ring-to Number</label>
+          <input type="text" class="validate[required]" id="ringto_number" name="criteria[ringto_number]">
+        </div>
+        
+        <div>
+          <label for="is_outbound">Outbound Call?</label>
+          <select id="is_outbound" name="criteria[is_outbound]">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+          </select>
+        </div>
+        
+        <div>
+          <label for="assign_to">Assign To</label>
+          <input type="text" id="assign_to" name="criteria[assign_to]">
+        </div>
+        
+        <div class="required">
+          <label for="audio">Audio file</label>
+        	<input id="datafile" type="file" class="validate[required]" name="datafile" />
+
+        </div>
+        
+      </div>
+    </div>
+    
+  
+    <div id="finalize">
+      <input type="submit" class="save" id="submit" value="Upload Call">
+      <div id="loading"><%= image_tag("ajax-loader.gif") %></div>
+    </div>
+  
+    <h3>API Response</h3>
+    <div class="output" id="output"></div>
+  
+  </form>
+</div>

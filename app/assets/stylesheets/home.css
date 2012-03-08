@@ -1,0 +1,15 @@
+/*
+  Place all the styles related to the matching controller here.
+  They will automatically be included in application.css.
+*/
+
+label { display: inline-block; width: 175px; }
+#meta, #loading { display: none; }
+.output { overflow: scroll; padding: 8px; margin: 20px 0 0 0; border: 1px solid #aaa8a8; background: #eee; color: #222}
+  .output .status { padding: 10px; font-size: 15pt; font-weight: bold; display: inline-block; }
+  .output .message { padding: 10px; display: inline-block; }
+  .output strong { display: inline-block; width: 100px; }
+.required { 
+  color: #ce0808;
+}
+.criteria div { margin: 5px 0; }
